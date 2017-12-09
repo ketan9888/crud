@@ -9,7 +9,6 @@ $result = mysqli_query($conn,$sql);
 <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-<!-- Added Comment -->
 <form name="frmUser" method="post" action="">
 <div style="width:500px;">
 <div class="message"><?php if(isset($message)) { echo $message; } ?></div>
