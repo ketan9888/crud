@@ -18,4 +18,6 @@ jobs:
 
     steps:     
       #- run: scp -P 22 ~/crud/favicon.png root@13.126.42.54:/var/www/html/circleci            
-      - run: ssh root@13.126.42.54 'cd /var/www/html/circleci/crud && git pull origin master'
+      #- run: ssh root@13.126.42.54 'cd /var/www/html/circleci/crud/ && git pull origin master'
+      - run: rsync -av --dry-run --update ~/crud/* root@13.126.42.54:/var/www/html/circleci/crud/
+      - run: rsync -av --update ~/crud/* root@13.126.42.54:/var/www/html/circleci/crud/

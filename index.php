@@ -5,6 +5,7 @@ $result = mysqli_query($conn,$sql);
 ?>
 <html>
 <head>
+<!-- Added Comment -->
 <title>Users List</title>
 <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
