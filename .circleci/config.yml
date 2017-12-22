@@ -21,7 +21,7 @@ jobs:
       #- run: rsync -av --dry-run --update ~/crud/* ubuntu@13.126.42.54:/var/www/html/circleci/crud/
       #- run: rsync -av --update ~/crud/* ubuntu@13.126.42.54:/var/www/html/circleci/crud/
 
-    deployement:
+    deploy:
       push_to_server:
         branch: master
         commands:
