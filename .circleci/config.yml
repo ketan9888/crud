@@ -15,9 +15,14 @@ jobs:
       # - image: circleci/mysql:9.4
 
     working_directory: ~/crud
-
     steps:     
       #- run: scp -P 22 ~/crud/favicon.png root@13.126.42.54:/var/www/html/circleci            
       #- run: ssh root@13.126.42.54 'cd /var/www/html/circleci/crud/ && git pull origin master'
-      - run: rsync -av --dry-run --update ~/crud/* ubuntu@13.126.42.54:/var/www/html/circleci/crud/
-      - run: rsync -av --update ~/crud/* ubuntu@13.126.42.54:/var/www/html/circleci/crud/
+      #- run: rsync -av --dry-run --update ~/crud/* ubuntu@13.126.42.54:/var/www/html/circleci/crud/
+      #- run: rsync -av --update ~/crud/* ubuntu@13.126.42.54:/var/www/html/circleci/crud/
+
+    deployement:
+      push_to_server:
+        branch: master
+        commands:
+          - ssh ubuntu@13.126.42.54 'cd /var/www/html/circleci/crud/ && git pull origin master'
