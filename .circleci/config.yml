@@ -19,8 +19,9 @@ jobs:
       #- run: rsync -av --update ~/crud/* ubuntu@13.126.42.54:/var/www/html/circleci/crud/
       #- run: ssh ubuntu@13.126.42.54 'cd /var/www/html/circleci/crud/ && git pull origin master'
 
-      - run: ssh-keyscan 159.203.116.63 >> ~/.ssh/known_hosts
-      - run: ssh root@159.203.116.63 'cd /var/www/html/crud/crud/ && git pull origin master'
+      #- run: ssh-keyscan 159.203.116.63 >> ~/.ssh/known_hosts
+      #- run: ssh root@159.203.116.63 'cd /var/www/html/crud/crud/ && git pull origin master'      
+      - run: sshpass -p Admin@123 ssh root@159.203.116.63 'cd /var/www/html/crud/crud/ && git pull origin master'
       # deploy:
     #   push_to_server:
     #     branch: master
